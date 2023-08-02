@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Results summary component</title>
+
+  <style>
+    @font-face {
+      font-family: 'Hanken Grotesk';
+      src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .dem-color {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .icon {
+      margin: 0 10px;
+    }
+
+    body {
+      /* display */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100cqh;
+      padding: 0;
+      margin: 0;
+
+      /* colors */
+      background-color: hsl(0, 0%, 100%);
+
+      /* typograph */
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 18px;
+    }
+
+    .box {
+      /* display */
+      display: flex;
+
+      /* colors */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+      /* shape */
+      border-radius: 20px;
+      padding: 00;
+      margin: 0;
+      max-width: 100cqh;
+    }
+
+    @media screen and (max-width: 480px) {
+      .box {
+        flex-direction: column;
+      }
+    }
+
+    .box .left-box {
+      /* display */
+      flex: 1;
+      text-align: center;
+
+      /* colors */
+      background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      color: white;
+
+      /* shape */
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .box .left-box .title {
+      padding: 0;
+      margin: 0;
+      margin-top: 20%;
+    }
+
+    .box .left-box div {
+      margin: 10% 0;
+    }
+
+    .box .left-box .bubble {
+      /* display */
+      display: inline-block;
+      text-align: center;
+      width: 150px;
+      height: 150px;
+
+      background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      background-color: hsl(241, 81%, 54%);
+      border-radius: 50%;
+    }
+
+    .box .left-box .bubble .main h1 {
+      margin: 10% 0 0 0;
+      font-size: 75px;
+    }
+
+    .box .left-box .bubble .main p {
+      margin: 0;
+    }
+
+    .box .right-box {
+      /* display */
+      flex: 1;
+
+      /* shape */
+      padding: 20px;
+    }
+
+    .box .right-box table {
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .right-box tr {
+      display: flex;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    .right-box td:first-of-type {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+
+    .right-box .red {
+      background-color: hsl(0, 100%, 67%, .1);
+      border-radius: 10px;
+    }
+
+    .right-box .red td:first-of-type {
+      color: hsl(0, 100%, 67%);
+    }
+
+    .right-box .yellow {
+      background-color: hsl(39, 100%, 56%, .1);
+      border-radius: 10px;
+    }
+
+    .right-box .yellow td:first-of-type {
+      color: hsl(39, 100%, 56%);
+    }
+
+    .right-box .green {
+      background-color: hsl(166, 100%, 37%, .1);
+      border-radius: 10px;
+    }
+
+    .right-box .green td:first-of-type {
+      color: hsl(166, 100%, 37%);
+    }
+
+    .right-box .blue {
+      background-color: hsl(234, 85%, 45%, .1);
+      border-radius: 10px;
+    }
+
+    .right-box .blue td:first-of-type {
+      color: hsl(234, 85%, 45%);
+    }
+
+    .right-box button {
+      width: 90%;
+      margin: 0 20px;
+      padding: 20px 0;
+      border-radius: 25px;
+      border: 0;
+      background-color: hsl(224, 30%, 27%);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="left-box">
+      <h3 class="title dem-color">Your Result</h3>
+      <div class="bubble">
+        <div class="main">
+          <h1>76</h1>
+          <p class="secondry dem-color">of 100</p>
+        </div>
+      </div>
+
+      <div class="description">
+        <h2>Great</h2>
+        <p class="dem-color">You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+
+    </div>
+    <div class="right-box">
+      <h3 class="title">Summary</h3>
+
+      <table>
+        <tr class="red">
+          <td>
+            <img class="icon" src="assets/images/icon-reaction.svg" alt="reaction icon"> Reaction
+          </td>
+          <td>80 / 100</td>
+        </tr>
+        <tr class="yellow">
+          <td>
+            <img class="icon" src="assets/images/icon-memory.svg" alt="memory icon"> Memory
+          </td>
+          <td>92 / 100</td>
+        </tr>
+        <tr class="green">
+          <td>
+            <img class="icon" src="assets/images/icon-verbal.svg" alt="verbal icon"> Verbal
+          </td>
+          <td>61 / 100</td>
+        </tr>
+        <tr class="blue">
+          <td>
+            <img class="icon" src="assets/images/icon-visual.svg" alt="visual icon"> Visual
+          </td>
+          <td>72 / 100</td>
+        </tr>
+      </table>
+
+      <button type="submit">Continue</button>
+    </div>
+  </div>
+</body>
+
+</html>
